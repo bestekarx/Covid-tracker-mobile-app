@@ -1,13 +1,14 @@
 # Covid-tracker-mobile-app
-https://corona.lmao.ninja/ sitesindeki apiyi kullanarak hazırladığım mobil uygulama.
-Mobil uygulamada her hangi bir projede kullanabileceğiniz bir çok element mevcut.
-Bu proje tarafımdan yazılıp hiç bir ücret söz konusu değildir. Web sitem : http://bestd3v.xyz/
+https://corona.lmao.ninja/ sitesindeki apiyi kullanarak hazırladığım mobil uygulama. <br />
+Mobil uygulamada her hangi bir projede kullanabileceğiniz bir çok element mevcut. <br />
+Bu proje tarafımdan yazılıp hiç bir ücret söz konusu değildir.<br /> Web sitem : http://bestd3v.xyz/ <br />
 
-![alt text](https://cdn.r10.net/editor/113212/1965039602.png)
+![alt text](https://cdn.r10.net/editor/113212/1965039602.png)<br />
 
 
 
-Youtube Videosu : 
+Youtube Videosu : <br />
+https://www.youtube.com/watch?v=EMOgfLRmeCM <br />
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=EMOgfLRmeCM)
 
 
