@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<covidTracker:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:covidTracker="clr-namespace:CovidTracker;assembly=CovidTracker"
+             xmlns:customControl="clr-namespace:CovidTracker.CustomControl;assembly=CovidTracker"
+             xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             mc:Ignorable="d"
+             x:Class="CovidTracker.MainPage">
+
+
+    <StackLayout Orientation="Vertical">
+
+        <tabView:SfTabView VisibleHeaderCount="2">
+            <tabView:SfTabItem Title="{customControl:Translate World}">
+                <tabView:SfTabItem.Content>
+
+                    <ScrollView Grid.Row="0">
+                        <Grid  x:Name="allData">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Style="{StaticResource MainPageRowZeroTitle}" TextColor="{StaticResource DefaultFontColor}" Text="{customControl:Translate Cases}" Grid.Column="0" />
+                                <Label Style="{StaticResource MainPageRowZeroTitle}" TextColor="{StaticResource RedFontColor}" Text="{customControl:Translate Death}"     Grid.Column="1" />
+                                <Label Style="{StaticResource MainPageRowZeroTitle}" TextColor="{StaticResource GreenFontColor}" Text="{customControl:Translate Recovered}"   Grid.Column="2" />
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="lblCases" Style="{StaticResource MainPageRowOneLabel}" TextColor="{StaticResource DefaultFontColor}" Grid.Column="0" />
+                                <Label x:Name="lblDeath" Style="{StaticResource MainPageRowOneLabel}" TextColor="{StaticResource RedFontColor}"     Grid.Column="1" />
+                                <Label x:Name="lblRecovered" Style="{StaticResource MainPageRowOneLabel}" TextColor="{StaticResource GreenFontColor}"   Grid.Column="2" />
+                            </Grid>
+
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource DefaultFontColor}" Text="{customControl:Translate TodayCases}" Grid.Column="0" />
+                                <Label Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource RedFontColor}" Text="{customControl:Translate TodayDeath}"     Grid.Column="1" />
+                                <Label Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource DefaultFontColor}" Text="{customControl:Translate ActiveCases}"   Grid.Column="2" />
+                            </Grid>
+
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="lblTodayCases" Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource DefaultFontColor}" Grid.Column="0" />
+                                <Label x:Name="lblTodayDeath" Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource RedFontColor}"     Grid.Column="1" />
+                                <Label x:Name="lblActiveCases" Style="{StaticResource MainPageRowFourLabel}" TextColor="{StaticResource DefaultFontColor}"   Grid.Column="2" />
+                            </Grid>
+
+                        </Grid>
+                    </ScrollView>
+
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem  Title="{customControl:Translate Countries}">
+                <tabView:SfTabItem.Content>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Style="{StaticResource MainPageRowZeroTitle}" TextColor="{StaticResource DefaultFontColor}" Text="{customControl:Translate CountryList}" Grid.Row="0" 
+                   FontSize="26"
+                   HorizontalTextAlignment="Start" />
+
+                        <customControl:CustomImageEntry
+                x:Name="entr_search"
+                Margin="20,0,20,0"
+                VerticalOptions="FillAndExpand"
+                TextChanged="SearchBar_OnTextChanged"
+                HorizontalOptions="FillAndExpand"
+                Grid.Row="1" 
+                LineColor="{StaticResource VirusColor}"
+                LeftImage="search_logo.png" 
+                Placeholder="{customControl:Translate Search}" />
+
+
+                        <xForms:SfListView
+                        x:Name="listView" 
+                        ItemTapped="ListView_OnItemTapped"
+                       AutoFitMode="Height"
+                       SelectionBackgroundColor="Transparent"
+                       DragStartMode="OnHold, OnDragIndicator"
+                       Grid.Row="2" >
+
+                            <xForms:SfListView.LayoutManager>
+                                <xForms:GridLayout SpanCount="2"/>
+                            </xForms:SfListView.LayoutManager>
+
+                            <xForms:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame BackgroundColor="{StaticResource ListviewItemBG}" Padding="0" HasShadow="True"  CornerRadius="10" Margin="20">
+                                            <StackLayout Orientation="Vertical" Margin="10">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Image  Source="{Binding countryInfo.flag}" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" />
+                                                    <Label Style="{StaticResource ListViewLabel}" Text="{Binding country}" />
+                                                </StackLayout>
+                                                <Label Style="{StaticResource ListViewLabel}" Text="{Binding casesString}" />
+                                                <Label Style="{StaticResource ListViewLabel}" Text="{Binding todayCasesString}" />
+                                                <Label Style="{StaticResource ListViewLabel}" Text="{Binding deathsString}" />
+                                                <Label Style="{StaticResource ListViewLabel}" Text="{Binding activeString}" />
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Style="{StaticResource ListViewLabel}" Text="{Binding deathsString}" />
+                                                    <Image  Source="detail_logo.png" HorizontalOptions="EndAndExpand"   />
+                                                </StackLayout>
+
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </xForms:SfListView.ItemTemplate>
+                        </xForms:SfListView>
+
+
+
+                    </Grid>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+        </tabView:SfTabView>
+
+        <Frame Padding="0" Margin="0">
+            <StackLayout x:Name="st_admob" />
+        </Frame>
+
+    </StackLayout>
+
+
+
+
+</covidTracker:BaseContentPage>
