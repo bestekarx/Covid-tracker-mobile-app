@@ -30,7 +30,7 @@ namespace CovidTracker
 
             InitializeComponent();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQyMDc1QDMxMzgyZTMxMmUzMGFKa2luZVlST3V3c2VPR1k2ckpzOXpsQVRqSjJqaE9YTXl1WUpwWExFYXM9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("syncfusionstudentlicensekey");
 
 
             MainPage = new MainPage();
