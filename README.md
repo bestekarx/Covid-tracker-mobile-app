@@ -8,6 +8,6 @@ Bu proje tarafımdan yazılıp hiç bir ücret söz konusu değildir. Web sitem 
 
 
 Youtube Videosu : 
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=EMOgfLRmeCM)
 
-![alt text](https://www.youtube.com/watch?v=EMOgfLRmeCM)
 
