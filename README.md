@@ -9,6 +9,9 @@ Bu proje tarafımdan yazılıp hiç bir ücret söz konusu değildir.<br /> Web 
 
 Youtube Videosu : <br />
 https://www.youtube.com/watch?v=EMOgfLRmeCM <br />
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=EMOgfLRmeCM)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=EMOgfLRmeCM) <br />
+alperen eker    <br />
+https://www.linkedin.com/in/alpereneker/  <br />
+https://www.instagram.com/bestekarx/
 
 
